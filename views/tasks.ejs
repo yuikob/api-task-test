@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>APIの挙動確認ページ</h1>
+    
+    <div>
+        <h3>現状のタスク一覧</h3>
+        <ul>
+        <% for (var i = 0; i < tasks.length; i++) { %>
+            <li>タスク名： <a href="/api/tasks/<%= tasks[i].id %>" ><%= tasks[i].name %></a>　　状態: <%= tasks[i].completed %></li>
+            <% } %>
+        </ul>
+    
+    </div>
+    
+    <br>
+    <h3>新しいタスクの作成用フォーム</h3>
+    <form action="/api/tasks" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="submit" value="送信！">
+    </form>
+    
+  </body>
+</html>

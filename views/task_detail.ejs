@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Taskの詳細ページ</h1>
+    
+    <div>
+        <h3>タスクの詳細情報</h3>
+        <ul>
+            <li>タスクid： <%= task.id %></li>
+            <li>タスク名： <%= task.name %></li>
+            <li>状態: <%= task.completed %></li>
+        </ul>
+    
+    </div>
+    
+    <br>
+    <h3>タスクの更新フォーム</h3>
+    <form action="/api/tasks/<%= task.id %>" method="post">
+        <input type="text" name="name" placeholder="name">
+        <label><input type="radio" name="completed" value="true">true</label>
+        <label><input type="radio" name="completed" value="false">false</label>
+        <input id="putBtn" type="submit" value="送信！">
+    </form>
+    
+  </body>
+</html>
