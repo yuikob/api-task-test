@@ -48,9 +48,9 @@ router.post("/tasks", (req, res) => {
   };
   tasks.push(task);
   res.status(201);
-  res.render("task_detail", {
+  res.render("tasks", {
     title: "API",
-    task: task,
+    tasks: tasks,
   });
 });
 
